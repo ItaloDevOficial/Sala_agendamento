@@ -28,8 +28,8 @@ const WeekCalendar = () => {
   };
 
   return (
-    <div className="week-calendar">
-      <div className="navigation">
+    <div className="Calendario">
+      <div className="Navegacao">
         <button onClick={() => setCurrentDate(new Date(currentDate.setDate(currentDate.getDate() - 7)))}>&lt;</button>
         <div>
           {monthsOfYear[currentDate.getMonth()]} {currentDate.getFullYear()}

@@ -9,10 +9,10 @@ function App() {
       <header className="App-header">
         <h1>Agendamento de Salas</h1>
       </header>
-      <div className="calendar-container">
+      <div className="Section_Calendario">
         <Calendario />
       </div>
-      <div className="schedule-container">
+      <div className="Section_Agenda">
         <Agenda />
       </div>
     </div>

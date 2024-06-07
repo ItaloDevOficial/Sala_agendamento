@@ -3,7 +3,7 @@ import './Agenda.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Schedule = () => {
+const Agenda = () => {
   // Gerar horários de 30 em 30 minutos das 8h às 19h
   const times = [];
   for (let hour = 8; hour < 19; hour++) {
@@ -29,8 +29,8 @@ const Schedule = () => {
   };
 
   return (
-    <div className="schedule">
-      <div className='schedule2'>
+    <div className="Agenda">
+      <div className='Agenda2'>
       <ToastContainer />
       <h2>Agende um Horário</h2>
       <div className="time-slots">
@@ -61,4 +61,4 @@ const Schedule = () => {
   );
 };
 
-export default Schedule;
+export default Agenda;

@@ -12,10 +12,6 @@
   border: 2px solid #dfdfdf; 
 }
 
-header h1{
-  color: #4b0e0e;
-}
-
 .App {
   display: flex;
   flex-direction: column;
@@ -29,9 +25,10 @@ header h1{
   text-align: center;
   height: 45px;
   padding-bottom: 20px;
+  color: #4b0e0e;
 }
 
-.calendar-container {
+.Section_Calendario {
   margin-top: 20px;
   max-width: 800px;
   width: 100%;
@@ -43,7 +40,7 @@ header h1{
   text-align: center;
 }
 
-.schedule-container {
+.Section_Agenda {
   margin-top: 20px;
   max-width: 800px;
   height: 500px;

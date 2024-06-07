@@ -1,9 +1,9 @@
-.week-calendar {
+.Calendario {
   text-align: center;
   font-family: 'Arial', sans-serif;
 }
 
-.navigation {
+.Navegacao {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,7 +12,7 @@
   color: #350a06;
 }
 
-.navigation button {
+.Navegacao button {
   background-color: transparent;
   border: none;
   font-size: 1.3rem;

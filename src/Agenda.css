@@ -1,4 +1,4 @@
-.schedule2 {
+.Agenda2 {
   border-radius: 15px;
   background-color: #ffffff; /* Vinho escuro */
   font-family: sans-serif;
@@ -6,7 +6,7 @@
   overflow-y: auto; /* Adicionar scroll vertical */
 }
 
-.schedule2 h2 {
+.Agenda2 h2 {
   margin-bottom: 20px;
   font-size: 2rem;
   color: #350a06;
