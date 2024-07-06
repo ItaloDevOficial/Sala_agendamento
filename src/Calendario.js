@@ -1,51 +1,51 @@
 import React, { useState } from 'react';
 import './Calendario.css';
 
-const WeekCalendar = () => {
-  const daysOfWeek = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
-  const monthsOfYear = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+const Calendario = () => {
+  const diasDaSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+  const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
 
-  const [currentDate, setCurrentDate] = useState(new Date());
-  const [selectedDay, setSelectedDay] = useState(new Date());
+  const [dataAtual, setDataAtual] = useState(new Date());
+  const [diaSelecionado, setDiaSelecionado] = useState(new Date());
 
-  const handleDayClick = (index) => {
-    const firstDayOfWeek = new Date(currentDate);
-    firstDayOfWeek.setDate(firstDayOfWeek.getDate() - firstDayOfWeek.getDay() + index);
-    setSelectedDay(firstDayOfWeek);
+  const handleDayClick = (indice) => {
+    const primeiroDiaDaSemana = new Date(dataAtual);
+    primeiroDiaDaSemana.setDate(primeiroDiaDaSemana.getDate() - primeiroDiaDaSemana.getDay() + indice);
+    setDiaSelecionado(primeiroDiaDaSemana);
   };
 
-  const getDayNumber = (index) => {
-    const firstDayOfWeek = new Date(currentDate);
-    firstDayOfWeek.setDate(firstDayOfWeek.getDate() - firstDayOfWeek.getDay() + index);
-    return firstDayOfWeek.getDate();
+  const obterNumeroDoDia = (indice) => {
+    const primeiroDiaDaSemana = new Date(dataAtual);
+    primeiroDiaDaSemana.setDate(primeiroDiaDaSemana.getDate() - primeiroDiaDaSemana.getDay() + indice);
+    return primeiroDiaDaSemana.getDate();
   };
 
-  const isToday = (index) => {
-    const today = new Date();
-    const dateToCheck = new Date(currentDate);
-    dateToCheck.setDate(dateToCheck.getDate() - dateToCheck.getDay() + index);
-    return today.toDateString() === dateToCheck.toDateString();
+  const isToday = (indice) => {
+    const hoje = new Date();
+    const dataParaVerificar = new Date(dataAtual);
+    dataParaVerificar.setDate(dataParaVerificar.getDate() - dataParaVerificar.getDay() + indice);
+    return hoje.toDateString() === dataParaVerificar.toDateString();
   };
 
   return (
-    <div className="Calendario">
-      <div className="Navegacao">
-        <button onClick={() => setCurrentDate(new Date(currentDate.setDate(currentDate.getDate() - 7)))}>&lt;</button>
+    <div className="calendario">
+      <div className="navegacao">
+        <button onClick={() => setDataAtual(new Date(dataAtual.setDate(dataAtual.getDate() - 7)))}>&lt;</button>
         <div>
-          {monthsOfYear[currentDate.getMonth()]} {currentDate.getFullYear()}
+          {mesesDoAno[dataAtual.getMonth()]} {dataAtual.getFullYear()}
         </div>
-        <button onClick={() => setCurrentDate(new Date(currentDate.setDate(currentDate.getDate() + 7)))}>&gt;</button>
+        <button onClick={() => setDataAtual(new Date(dataAtual.setDate(dataAtual.getDate() + 7)))}>&gt;</button>
       </div>
-      <div className="days-container">
-        {daysOfWeek.map((day, index) => (
+      <div className="dias-container">
+        {diasDaSemana.map((dia, indice) => (
           <div
-            key={day}
-            className={`day ${isToday(index) ? 'current-day' : ''} ${selectedDay.toDateString() === new Date(currentDate.getFullYear(), currentDate.getMonth(), getDayNumber(index)).toDateString() ? 'selected' : ''}`}
-            onClick={() => handleDayClick(index)}
+            key={dia}
+            className={`dia ${isToday(indice) ? 'dia-atual' : ''} ${diaSelecionado.toDateString() === new Date(dataAtual.getFullYear(), dataAtual.getMonth(), obterNumeroDoDia(indice)).toDateString() ? 'selecionado' : ''}`}
+            onClick={() => handleDayClick(indice)}
           >
-            {day}
+            {dia}
             <br />
-            {getDayNumber(index)}
+            {obterNumeroDoDia(indice)}
           </div>
         ))}
       </div>
@@ -53,4 +53,4 @@ const WeekCalendar = () => {
   );
 };
 
-export default WeekCalendar;
+export default Calendario;

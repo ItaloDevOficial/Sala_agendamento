@@ -1,20 +1,17 @@
 import React from 'react';
 import './App.css';
 import Calendario from './Calendario';
-import Agenda from './Agenda';
+import Agendamento from './Agendamento';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Agendamento de Salas</h1>
+        <h1>Calendário de Agendamento</h1>
       </header>
-      <div className="Section_Calendario">
-        <Calendario />
-      </div>
-      <div className="Section_Agenda">
-        <Agenda />
-      </div>
+      <Calendario />
+      <div className="separador"></div>
+      <Agendamento />
     </div>
   );
 }

@@ -1,57 +1,99 @@
-.Calendario {
-  text-align: center;
-  font-family: 'Arial', sans-serif;
-}
-
-.Navegacao {
+.calendario {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+  background-color: #fff; /* Vinho escuro */
   color: #350a06;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px auto;
+  max-width: 800px; /* Limitar a largura máxima */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.Navegacao button {
-  background-color: transparent;
-  border: none;
-  font-size: 1.3rem;
-  cursor: pointer;
-  color: #350a06;
-  margin: 0 10px;
-}
-
-.days-container {
+.navegacao {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 20px;
+  
 }
 
-.day {
-  width: calc((100% - 60px) / 7); /* Distribui igualmente os dias */
-  padding: 20px;
-  border: none;
-  border-radius: 15px;
+.navegacao button {
   background-color: #ffffff;
-  color: #4b0e0e;
+  color: #350a06;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1);
+}
+
+.navegacao button:hover {
+  background-color: #4b0e0e;
+  color: #ffffff;
+}
+
+.navegacao div {
+  font-size: 20px;
   font-weight: bold;
+}
+
+.dias-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: nowrap; /* Manter em uma única linha */
+  overflow-x: auto; /* Adicionar barra de rolagem horizontal se necessário */
+}
+
+.dia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  color: #350a06;
+  border-radius: 10px;
+  padding: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  margin: 5px 5px; /* Espaçamento horizontal */
+  flex: 0 0 auto; /* Impedir que os dias encolham ou cresçam */
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1);
 }
 
-.day:hover {
-  background-color: #4b0e0e; /* Tom mais claro de vinho escuro */
-  transform: translateY(-3px);
-  color: #fff;
-}
-
-.selected {
+.dia:hover {
   background-color: #4b0e0e;
-  color: #fff;
+  color: #ffffff;
+  transform: translateY(-3px);
 }
 
-.current-day {
+.dia-atual {
   border: 2px solid #4b0e0e;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.selecionado {
+  border: 2px solid #350a06;
+  background-color: #4b0e0e;
+  color: #ffffff;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+  .navegacao div {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navegacao {
+    flex-direction: column;
+  }
+  .navegacao div {
+    margin: 10px 0;
+  }
 }
